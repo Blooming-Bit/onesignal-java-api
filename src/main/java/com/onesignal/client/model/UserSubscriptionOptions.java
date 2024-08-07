@@ -13,37 +13,21 @@
 
 package com.onesignal.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.io.Serializable;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.onesignal.client.JSON;
+import com.squareup.moshi.Json;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Objects;
 
 /**
  * UserSubscriptionOptions
@@ -53,7 +37,8 @@ public class UserSubscriptionOptions {
   private static final long serialVersionUID = 1L;
 
   public static final String SERIALIZED_NAME_RETAIN_PREVIOUS_OWNER = "retain_previous_owner";
-  @SerializedName(SERIALIZED_NAME_RETAIN_PREVIOUS_OWNER)
+  @JsonProperty(SERIALIZED_NAME_RETAIN_PREVIOUS_OWNER)
+  @Json(name = SERIALIZED_NAME_RETAIN_PREVIOUS_OWNER)
   private Boolean retainPreviousOwner;
 
   public UserSubscriptionOptions() { 

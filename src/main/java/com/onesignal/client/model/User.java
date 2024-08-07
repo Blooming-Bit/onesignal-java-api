@@ -13,44 +13,25 @@
 
 package com.onesignal.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.onesignal.client.model.PropertiesObject;
-import com.onesignal.client.model.SubscriptionObject;
-import com.onesignal.client.model.UserSubscriptionOptions;
-import io.swagger.annotations.ApiModel;
+import com.onesignal.client.JSON;
+import com.squareup.moshi.Json;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.io.Serializable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import com.onesignal.client.JSON;
+import java.util.Objects;
 
 /**
  * User
@@ -60,19 +41,23 @@ public class User {
   private static final long serialVersionUID = 1L;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
-  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @JsonProperty(SERIALIZED_NAME_PROPERTIES)
+  @Json(name = SERIALIZED_NAME_PROPERTIES)
   private PropertiesObject properties;
 
   public static final String SERIALIZED_NAME_IDENTITY = "identity";
-  @SerializedName(SERIALIZED_NAME_IDENTITY)
+  @JsonProperty(SERIALIZED_NAME_IDENTITY)
+  @Json(name = SERIALIZED_NAME_IDENTITY)
   private Map<String, Object> identity = null;
 
   public static final String SERIALIZED_NAME_SUBSCRIPTIONS = "subscriptions";
-  @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)
+  @JsonProperty(SERIALIZED_NAME_SUBSCRIPTIONS)
+  @Json(name = SERIALIZED_NAME_SUBSCRIPTIONS)
   private List<SubscriptionObject> subscriptions = null;
 
   public static final String SERIALIZED_NAME_SUBSCRIPTION_OPTIONS = "subscription_options";
-  @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_OPTIONS)
+  @JsonProperty(SERIALIZED_NAME_SUBSCRIPTION_OPTIONS)
+  @Json(name = SERIALIZED_NAME_SUBSCRIPTION_OPTIONS)
   private UserSubscriptionOptions subscriptionOptions;
 
   public User() { 
